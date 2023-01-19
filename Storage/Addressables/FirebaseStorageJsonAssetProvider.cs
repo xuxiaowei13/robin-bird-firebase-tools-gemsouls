@@ -48,7 +48,7 @@ namespace RobinBird.FirebaseTools.Storage.Addressables
             var locationPath = UnityEngine.AddressableAssets.Addressables.ResourceManager.TransformInternalId(provideHandle.Location);
             Debug.Log("Loading Json at: " + locationPath);
             
-            var reference = FirebaseStorage.DefaultInstance.GetReferenceFromUrl(locationPath);
+            var reference = FirebaseStorage.GetInstance("gs://gemsouls-96b6d-kpmtn/").GetReferenceFromUrl(locationPath);
 
             reference.GetDownloadUrlAsync().ContinueWithOnMainThread(task =>
             {

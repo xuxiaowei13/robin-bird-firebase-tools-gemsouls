@@ -34,7 +34,7 @@ namespace RobinBird.FirebaseTools.Storage.Addressables
             Debug.Log("Loading manifest: " + provideHandle.Location.InternalId);
 
             var reference =
-                FirebaseStorage.DefaultInstance.GetReferenceFromUrl(provideHandle.Location.InternalId);
+                FirebaseStorage.GetInstance("gs://gemsouls-96b6d-kpmtn/").GetReferenceFromUrl(provideHandle.Location.InternalId);
 
             reference.GetDownloadUrlAsync().ContinueWithOnMainThread(task =>
             {

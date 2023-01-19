@@ -84,7 +84,7 @@ namespace RobinBird.FirebaseTools.Storage.Addressables
                                     continue;
                                 }
                                 
-                                StorageReference reference = FirebaseStorage.DefaultInstance.GetReferenceFromUrl(firebaseUrl);
+                                StorageReference reference = FirebaseStorage.GetInstance("gs://gemsouls-96b6d-kpmtn/").GetReferenceFromUrl(firebaseUrl);
 
                                 StartUrlFetch(completed, reference, firebaseUrl);
                             }
